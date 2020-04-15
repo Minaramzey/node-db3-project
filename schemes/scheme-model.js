@@ -23,9 +23,17 @@ function findById(id) {
     .where({ id })
     .first();
 }
+//Also Works--- Just testing different ways
+// function findSteps(scheme_id) {
+//     return db("steps as s")
+//       .join("schemes as sc", "s.scheme_id", "sc.id")
+//       .select("s.instructions", "s.step_number")
+//       .where({ scheme_id });
+// }
 
 function findSteps(id) {
-    return db("steps").where("scheme_id", id);
+    return db("steps")
+    .where("scheme_id", id);
   }
 
 function add(newScheme) {
